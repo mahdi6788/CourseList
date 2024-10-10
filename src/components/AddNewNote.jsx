@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddNewNote() {
+function AddNewNote({setNotes}) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -8,6 +8,8 @@ function AddNewNote() {
   const handleSubmit = (event) => {
     // to prevent from refreshing the page
     event.preventDefault();
+    // 
+    if (!title || !description) return null
     // to store note in an object and for future usage
     const newNote = {
       title,
@@ -16,10 +18,11 @@ function AddNewNote() {
       completed: false,
       createdAt: new Date().toISOString(),
     };
-    console.log(newNote);
     // to make the input empty and ready for another note
     setTitle("");
     setDescription("");
+    setNotes(prevNotes => [...prevNotes, newNote])
+
   };
 
   //   next step: updating the existing notes
