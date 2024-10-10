@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddNewNote({setNotes}) {
+function AddNewNote({onAddNote}) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -21,7 +21,7 @@ function AddNewNote({setNotes}) {
     // to make the input empty and ready for another note
     setTitle("");
     setDescription("");
-    setNotes(prevNotes => [...prevNotes, newNote])
+    onAddNote(newNote)
 
   };
 

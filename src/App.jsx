@@ -8,13 +8,16 @@ import NotesList from "./components/NotesList";
 function App() {
   // 
   const [notes, setNotes] = useState([])
+  const handleAddNotes = (newNote) => {
+    setNotes(prevNotes => [...prevNotes, newNote])
+  }
 
   return (
     <div className="component">
       <div className="note-header"> <Header /> </div>
       <div className="note-app">
         {/* These two components are sibling */}
-        <AddNewNote setNotes={setNotes}/>
+        <AddNewNote onAddNote={handleAddNotes}/>
         <div className="note-container">
           <NotesList notes={notes}/>
         </div>
