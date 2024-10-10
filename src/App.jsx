@@ -1,4 +1,5 @@
 import "./App.css";
+import AddNewNote from "./components/AddNewNote";
 import Header from "./components/Header";
 
 
@@ -7,7 +8,7 @@ function App() {
     <div className="component">
       <div className="note-header"> <Header /> </div>
       <div className="note-app">
-        <div className="add-new-note">AddNote</div>
+        <AddNewNote />
         <div className="note-container">Notes</div>
       </div>
 
