@@ -22,12 +22,12 @@ function App() {
       )
     );
   };
+  // to sort notes
+  const [sortBy, setSortBy] = useState("");
 
   return (
     <div className="component">
-      <div className="note-header">
-        <Header />
-      </div>
+      <Header notes={notes} setSortBy={setSortBy} sortBy={sortBy}/>
       <div className="note-app">
         {/* These two components are sibling */}
         <AddNewNote onAddNote={handleAddNotes} />
@@ -37,6 +37,7 @@ function App() {
             notes={notes}
             handleDelete={handleDelete}
             handleCheckBox={handleCheckBox}
+            sortBy={sortBy}
           />
         </div>
       </div>
