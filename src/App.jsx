@@ -3,6 +3,7 @@ import "./App.css";
 import AddNewNote from "./components/AddNewNote";
 import Header from "./components/Header";
 import NotesList from "./components/NotesList";
+import NoteStatus from "./components/NoteStatus";
 
 function App() {
   //
@@ -31,6 +32,7 @@ function App() {
         {/* These two components are sibling */}
         <AddNewNote onAddNote={handleAddNotes} />
         <div className="note-container">
+          <NoteStatus notes={notes} />
           <NotesList
             notes={notes}
             handleDelete={handleDelete}
