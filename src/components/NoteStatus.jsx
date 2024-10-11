@@ -7,9 +7,10 @@ function NoteStatus({notes}){
     const openNotes = allNotes - completedNotes
 
     // conditional rendering
-    if (!allNotes) return  <Message>No note to show</Message>
+    if (!allNotes) return  <Message>No note to show</Message>   
+    // text inside the tag is children defined in message component
 
-    
+
     return (
         <ul className="note-status">
             <li>
