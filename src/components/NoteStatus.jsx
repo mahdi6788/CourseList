@@ -1,3 +1,5 @@
+import Message from "./Message"
+
 function NoteStatus({notes}){
     // here we can calculate required data from available state, so we do not need to create new state for this variable data
     const allNotes = notes.length
@@ -5,8 +7,9 @@ function NoteStatus({notes}){
     const openNotes = allNotes - completedNotes
 
     // conditional rendering
-    if (!allNotes) return <h2>No note to show</h2>
+    if (!allNotes) return  <Message>No note to show</Message>
 
+    
     return (
         <ul className="note-status">
             <li>
